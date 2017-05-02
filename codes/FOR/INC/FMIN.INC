@@ -1,0 +1,1 @@
+       COMMON /FMIN/FMIN(IJM,KB)

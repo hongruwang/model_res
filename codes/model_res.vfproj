@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioProject ProjectCreator="Intel Fortran" Keyword="Console Application" Version="11.0" ProjectIdGuid="{E9928864-78B6-42A6-846D-7BF6791AD033}">
+	<Platforms>
+		<Platform Name="Win32"/>
+		<Platform Name="x64"/></Platforms>
+	<Configurations>
+		<Configuration Name="Debug|Win32" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="C:\Program Files (x86)\MPICH2\INCLUDE" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" AdditionalLibraryDirectories="C:\Program Files (x86)\MPICH2\lib" IgnoreDefaultLibraryNames="libcmtd.lib" GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/ecom3d.pdb" SubSystem="subSystemConsole" AdditionalDependencies="fmpich2.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release|Win32" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="..\include" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/ecom3d.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\lib" GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/ecom3d.pdb" SubSystem="subSystemConsole" AdditionalDependencies="fmpich2.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Debug|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="..\include" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/ecom3d.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\lib" GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/ecom3d.pdb" SubSystem="subSystemConsole" AdditionalDependencies="fmpich2.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/></Configuration>
+		<Configuration Name="Release|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="..\include" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/ecom3d.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\lib" SubSystem="subSystemConsole" AdditionalDependencies="fmpich2.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/></Configuration></Configurations>
+	<Files>
+		<Filter Name="INC">
+		<File RelativePath=".\FOR\INC\ARCHIVE.INC"/>
+		<File RelativePath=".\FOR\INC\BCDATA.INC"/>
+		<File RelativePath=".\FOR\INC\BCOND.INC"/>
+		<File RelativePath=".\FOR\INC\CALCDAY.INC"/>
+		<File RelativePath=".\FOR\INC\CDAY.INC"/>
+		<File RelativePath=".\FOR\INC\CMA.INC"/>
+		<File RelativePath=".\FOR\INC\comdeck.inc"/>
+		<File RelativePath=".\FOR\INC\DH.INC"/>
+		<File RelativePath=".\FOR\INC\DISPLY.INC"/>
+		<File RelativePath=".\FOR\INC\ECOM3D.INC"/>
+		<File RelativePath=".\FOR\INC\exchange.INC"/>
+		<File RelativePath=".\FOR\INC\FHCALC.INC"/>
+		<File RelativePath=".\FOR\INC\floatdebr.INC"/>
+		<File RelativePath=".\FOR\INC\FLUX.INC"/>
+		<File RelativePath=".\FOR\INC\FMIN.INC"/>
+		<File RelativePath=".\FOR\INC\HITFLX.INC"/>
+		<File RelativePath=".\FOR\INC\ICNT.INC"/>
+		<File RelativePath=".\FOR\INC\INDEX.INC"/>
+		<File RelativePath=".\FOR\INC\LOGIC.INC"/>
+		<File RelativePath=".\FOR\INC\PARA.INC"/>
+		<File RelativePath=".\FOR\INC\PATHID.INC"/>
+		<File RelativePath=".\FOR\INC\PROFE.INC"/>
+		<File RelativePath=".\FOR\INC\PROFQ.INC"/>
+		<File RelativePath=".\FOR\INC\PROFSED.INC"/>
+		<File RelativePath=".\FOR\INC\PROFXY.INC"/>
+		<File RelativePath=".\FOR\INC\readdata.INC"/>
+		<File RelativePath=".\FOR\INC\SEDIC.INC"/>
+		<File RelativePath=".\FOR\INC\SETDOM.INC"/>
+		<File RelativePath=".\FOR\INC\STRESS (1).INC"/>
+		<File RelativePath=".\FOR\INC\STRESS.INC"/>
+		<File RelativePath=".\FOR\INC\SUSLOD.INC"/>
+		<File RelativePath=".\FOR\INC\TANDS.INC"/>
+		<File RelativePath=".\FOR\INC\TRANINP.INC"/>
+		<File RelativePath=".\FOR\INC\TRANSPORT.INC"/>
+		<File RelativePath=".\FOR\INC\WREAL.INC"/>
+		<File RelativePath=".\FOR\INC\WVULP.INC"/>
+		<File RelativePath=".\FOR\INC\ZM.INC"/></Filter>
+		<File RelativePath=".\FOR\initfname.f"/>
+		<File RelativePath=".\FOR\main.f"/>
+		<File RelativePath=".\FOR\readoutput.f"/>
+		<File RelativePath=".\FOR\readtecplot_debug.f"/>
+		<File RelativePath=".\FOR\readtecplot_ECOM_3D.f"/>
+		<File RelativePath=".\FOR\readtecplot_RCA_3D.f"/></Files>
+	<Globals/></VisualStudioProject>

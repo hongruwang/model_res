@@ -1,0 +1,12 @@
+exe D:\BasinModels_SX\ECOMCQ\codes\Debug\ecom3dCQ.exe D:\GRID_MAKE_DATA\SX
+n 67
+wdir 
+hosts 
+cfg 
+mpich1 
+env 
+map 
+channel default
+extra 
+window no
+log no

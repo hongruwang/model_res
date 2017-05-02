@@ -1,0 +1,12 @@
+exe D:\BasinModels_SX\ECOMCQ\codes\Debug\ecom3dCQ.exe  d:\chongqing
+n 14
+wdir 
+hosts 
+cfg 
+mpich1 
+env 
+map 
+channel default
+extra 
+window no
+log no

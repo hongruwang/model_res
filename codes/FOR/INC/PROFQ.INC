@@ -1,0 +1,2 @@
+
+      COMMON/PFQ1/ DENOM(IJM)

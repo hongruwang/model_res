@@ -1,0 +1,5 @@
+ 
+   
+      COMMON /RDT3/ KIB(500) 
+	  COMMON /RDT7/ DTI2,DTE2
+

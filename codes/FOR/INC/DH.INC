@@ -1,0 +1,2 @@
+
+      COMMON/DH/ DH(IJM),BMASK(IJM)

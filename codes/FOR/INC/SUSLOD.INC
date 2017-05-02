@@ -1,0 +1,4 @@
+
+       COMMON/SUSLOD/  DEPK(2)
+
+       REAL*8 DEPK

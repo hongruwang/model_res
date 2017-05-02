@@ -1,0 +1,1 @@
+	   COMMON /ZM1/ZM(KBM1)

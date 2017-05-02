@@ -1,0 +1,11 @@
+
+C 
+      COMMON /TRAN2/  WETGU(MAXWET,KBM1),  WETGV(MAXWET,KBM1),
+     .           WETGW(MAXWET,KB),    
+     .           WETGAAMX(MAXWET,KBM1), WETGAAMY(MAXWET,KBM1),
+     .           WETGKM(MAXWET,KB),   WETGKH(MAXWET,KB),
+     .           WETGES(MAXWET),WETGED(MAXWET), 
+     .           WETGS(MAXWET,KBM1),WETGT(MAXWET,KBM1) 
+
+ 
+ 

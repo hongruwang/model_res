@@ -1,0 +1,6 @@
+
+       COMMON/PFQS/AU(IJM,KB),VHPF(IJM,KB)
+ 
+
+
+ 

@@ -1,0 +1,4 @@
+
+       COMMON/PFQSED/AU(IM,JM,KB),VHPF(IM,JM,KB)
+
+	   REAL*8 AU,VHPF

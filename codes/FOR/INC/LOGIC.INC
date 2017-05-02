@@ -1,0 +1,2 @@
+	   COMMON /TRAN1/ICNT
+ 

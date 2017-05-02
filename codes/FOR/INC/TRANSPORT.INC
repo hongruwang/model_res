@@ -1,0 +1,61 @@
+      COMMON /TRANSP1/  AAHLPF(IJM,KB)
+ 
+
+ 
+
+
+
+      COMMON /TRANSP5/ CSED1LPF(IJM,KBM1),CSED2LPF(IJM,KBM1)
+     .     ,WSET1LPF(IJM,KBM1),   WSET2LPF(IJM,KBM1)
+     .     ,SDEP1LPF(IJM),      SDEP2LPF(IJM)
+     .     ,SRES1LPF(IJM),      SRES2LPF(IJM) 
+     .     ,TAULPF(IJM) 
+
+      REAL  CSED1LPF,   CSED2LPF
+     .     ,WSET1LPF,   WSET2LPF
+     .     ,SDEP1LPF,   SDEP2LPF
+     .     ,SRES1LPF,   SRES2LPF
+     .     ,TAULPF
+
+
+
+	  COMMON /TRANSP6/ CBED1(IJM),CBED2(IJM),VRES(IJM)
+	  COMMON /TRANSP17/ TBEDTHIK(IJM)
+	  COMMON /TRANSP18/BEDTHIK(IJM)
+	  COMMON /TRANSP11/KMLPF(IJM,KB),Q2LPF(IJM,KB),LLPF(IJM,KB)
+
+      REAL   CBED1, CBED2,VRES,TBEDTHIK
+      REAL*8 BEDTHIK
+
+	  REAL KMLPF ,Q2LPF ,LLPF 
+
+
+
+
+	  COMMON /TRANSP8/  RCAU(MAXWET,KBM1),      RCAV(MAXWET,KBM1),
+     .           RCAW(MAXWET,KBM1),      
+     .           RCAAMX(MAXWET,KBM1),    RCAAMY(MAXWET,KBM1),
+     .           RCAKH(MAXWET,KBM1),     RCAKM(MAXWET,KBM1),
+     .           RCAS(MAXWET,KBM1),      RCAT(MAXWET,KBM1),
+     .           RCAES(MAXWET),          RCAED(MAXWET),
+     .           RCAQDIFF(MAXWET)
+
+
+
+
+
+	  COMMON /TRANSP9/ RCACSED1(MAXWET,KBM1),  RCACSED2(MAXWET,KBM1)
+     .          ,RCAWSET1(MAXWET,KBM1),  RCAWSET2(MAXWET,KBM1)
+     .          ,RCASDEP1(MAXWET),       RCASDEP2(MAXWET)
+     .          ,RCACBED1(MAXWET),       RCACBED2(MAXWET)
+     .          ,RCAVRES(MAXWET),        RCATAU(MAXWET)
+     .          ,RCATHIK(MAXWET)
+
+      REAL       RCACSED1,  RCACSED2
+     .          ,RCAWSET1,  RCAWSET2
+     .          ,RCASDEP1,       RCASDEP2
+     .          ,RCACBED1,       RCACBED2
+     .          ,RCAVRES,        RCATAU
+     .          ,RCATHIK
+
+
