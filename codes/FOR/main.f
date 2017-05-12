@@ -72,9 +72,12 @@ C
       
  !     ---------此处fname,PATHID中有赋值计算，因此必须放在所有声明的后面---------
 
-      INCLUDE 'INC\PATHID.INC'         
+      INCLUDE 'INC\PATHID.INC'        
+      
+      
+      USERPATH="D:\GRID_MAKE_DATA\PXH_C2016"   !!!修改路径
 
-      ISECOM=1  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
+      ISECOM=2  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
       
       ISMONITJ=1  ! 1，有监控点的统计；0无监控点
        
@@ -92,7 +95,7 @@ C
       
       ISHRUCITY=0    !!!是否进行每个HRU和城镇的统计
       
-      ISRCA3D=0    !!!是否要进行三维的统计
+      ISRCA3D=1    !!!是否要进行三维的统计
       
       ISECOMUV=0    !!!是否要进行流场的展示
       ISDITU=0    !!!是否要加底图地形，2为真三维底图
@@ -105,7 +108,7 @@ C
       NUMHRUS=360   !!!已知的HRU个数    
       
       
-      USERPATH="D:\GRID_MAKE_DATA\SX_C200_ALL"   !!!修改路径
+
 
 
 

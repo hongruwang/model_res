@@ -255,7 +255,7 @@ CW===========================输出三维结果===============
             COD=CARAY(IJ,IY,18)+CARAY(IJ,IY,19)+CARAY(IJ,IY,20)
      &+CARAY(IJ,IY,21)+CARAY(IJ,IY,22)+CARAY(IJ,IY,23)+CARAY(IJ,IY,24)
       
-             CHA=CARAY(IJ,IY,2)/15+CARAY(IJ,IY,3)/50+CARAY(IJ,IY,4)/25
+             CHA=CHALL(IJ,IY) 
             
             HHH=EL(IJ)-ZB(IJ)   
             ZZZ=ZB(IJ)+HHH*(KB-IY)/(KB-1) 
