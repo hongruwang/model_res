@@ -6,27 +6,81 @@
 --------------------Configuration: main - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\temp\RSP511.tmp" with contents
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5C.tmp" with contents
 [
 /check:bounds /compile_only /debug:full /nologo /traceback /warn:argument_checking /warn:nofileopt /module:"Debug/" /object:"Debug/" /pdbfile:"Debug/DF60.PDB" 
-"D:\shifanqu1207\Scenarios\Default\TxtInOut\swat\MODEL_RES\codes\FOR\readoutput.f"
+"D:\0712\swat\MODEL_RES\codes\FOR\readtecplot_RCA_3D.f"
+"D:\0712\swat\MODEL_RES\codes\FOR\readtecplot_ECOM_3D.f"
+"D:\0712\swat\MODEL_RES\codes\FOR\readtecplot_debug.f"
+"D:\0712\swat\MODEL_RES\codes\FOR\readoutput_swat.f"
+"D:\0712\swat\MODEL_RES\codes\FOR\main.f"
+"D:\0712\swat\MODEL_RES\codes\FOR\initfname.f"
 ]
-Creating command line "link.exe kernel32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/main.pdb" /debug /machine:I386 /out:"Debug/main.exe" /pdbtype:sept  .\Debug\initfname.obj .\Debug\main.obj .\Debug\readoutput.obj .\Debug\readtecplot_debug.obj "
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5D.tmp" with contents
+[
+kernel32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/main.pdb" /debug /machine:I386 /out:"Debug/main.exe" /pdbtype:sept 
+.\Debug\initfname.obj
+.\Debug\main.obj
+.\Debug\readoutput_swat.obj
+.\Debug\readtecplot_debug.obj
+.\Debug\readtecplot_ECOM_3D.obj
+.\Debug\readtecplot_RCA_3D.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5D.tmp"
 <h3>Output Window</h3>
 Compiling Fortran...
-D:\shifanqu1207\Scenarios\Default\TxtInOut\swat\MODEL_RES\codes\FOR\readoutput.f
-D:\shifanqu1207\Scenarios\Default\TxtInOut\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NU_SB]
+D:\0712\swat\MODEL_RES\codes\FOR\readtecplot_RCA_3D.f
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NU_SB]
     COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
 -------------------------------------^
-D:\shifanqu1207\Scenarios\Default\TxtInOut\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NUMMAID]
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NUMMAID]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\readtecplot_ECOM_3D.f
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NU_SB]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NUMMAID]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\readtecplot_debug.f
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NU_SB]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NUMMAID]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\readtecplot_debug.f(32) : Warning: Variable IUGRD is used before its value has been defined
+       OPEN(IUGRD,FILE=FNAMEGEO)
+------------^
+D:\0712\swat\MODEL_RES\codes\FOR\readoutput_swat.f
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NU_SB]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NUMMAID]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\main.f
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NU_SB]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NUMMAID]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\initfname.f
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NU_SB]
+    COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
+-------------------------------------^
+D:\0712\swat\MODEL_RES\codes\FOR\INC\PARA.INC(10) : Warning: Because of COMMON, the alignment of object is inconsistent with its type   [NUMMAID]
     COMMON /PARA2/GCMIT,TECIT,NU_SB,NUMMAID
 -------------------------------------------^
 Linking...
+Debug/main.exe : warning LNK4084: total image size 1970913280 exceeds max (268435456); image may not run
 
 
 
 <h3>Results</h3>
-main.exe - 0 error(s), 2 warning(s)
+main.exe - 0 error(s), 14 warning(s)
 </pre>
 </body>
 </html>

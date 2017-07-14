@@ -20,6 +20,9 @@ CW--------------4月05日，添加ECOM结果的断面流量----------
 CW--------------4月18日，添加ECOM结果的断面流量的自动统计----------
 CW--------------5月01日，将ECOM结果统计流量的第一条边加上----------
 CW--------------5月02日，开始使用git进行编辑，并上传----------
+CW--------------7月12日，添加SWAT逐月输出统计----------
+
+
 
 C*********************************************************
 C
@@ -75,15 +78,15 @@ C
       INCLUDE 'INC\PATHID.INC'        
       
       
-      USERPATH="D:\GRID_MAKE_DATA\PXH_C2016"   !!!修改路径
+CW===================变量初始化==================
+ 
+      ISECOM=1  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
+      
+      ISMONITJ=0  ! 整体的大范围上，是否有监控统计 1，有监控点的统计；0无监控点
+     
+      ISQCHECK=0   !!!ecom中进行Q的检验，要求ISECOM=1
+      ISQCHEAVE=0   !!!ecom中进行Q的检验，自动统计检验
 
-      ISECOM=2  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
-      
-      ISMONITJ=1  ! 1，有监控点的统计；0无监控点
-       
-      ISQCHECK=1   !!!ecom中进行Q的检验，要求ISECOM=3
-      ISQCHEAVE=1   !!!ecom中进行Q的检验，自动统计检验
-      
       ISTOALL=0  !!!是否将分块结果变成一块  
       
       ISHRUALL=0   !!!是否输出每个HRU每年的结果     
@@ -92,36 +95,153 @@ C
        
       ISRCHALL=0   !!!是否输出每个RCH每年的结果     
       
-      
       ISHRUCITY=0    !!!是否进行每个HRU和城镇的统计
       
-      ISRCA3D=1    !!!是否要进行三维的统计
+      ISRCA3D=0    !!!是否要进行三维的统计
       
       ISECOMUV=0    !!!是否要进行流场的展示
       ISDITU=0    !!!是否要加底图地形，2为真三维底图
-      
-      
-      MASTART=105  !!!要汇总的起始块
-      MAEND=122    !!!要汇总的结束块
-      
-      
-      NUMHRUS=360   !!!已知的HRU个数    
-      
-      
-
-
-
-
+       
       ISSUB=0
-      ISHRU=1
+      ISHRU=0
       ISRCH=0
-
+       
       NUMHRU=0
       NUMSUB=0
       
-       
-
+      ISSUBAMON=0
+      ISSUBAYEA=0
+CW===========================
       
+CW**********************用户修改*********************************      
+CW=====================输入要执行的要求==========================     
+CW=============================================================== 
+ 
+       USERPATH="D:\GRID_MAKE_DATA\PXH_C2016"   !!!修改路径
+      
+       MASTART=105  !!!要汇总的起始块，ECOM\RCA使用
+       MAEND=122    !!!要汇总的结束块，ECOM\RCA使用
+       
+       NUMHRUS=149 !!!SWAT输出文件中，HRU或者SUB的总数
+          
+       IMYREQ=0   !!!依据下面的提示，选择要进行的操作
+        
+        
+CW**************************************************        
+CW-------------IMYREQ---SWAT统计系列--------------
+CW**************************************************     
+CW----0：统计SWAT的所有SUB的逐月累积值
+CW----1：统计SWAT的所有SUB的逐年累积值
+CW----2：统计SWAT的每个RCH每年的结果值 
+CW----3：统计SWAT的每个hru对应的城市的值      
+ 
+
+CW**************************************************
+CW-------------IMYREQ---ECOM统计系列--------------
+CW**************************************************  
+CW----10：统计ECOM，输出监控断面的二维tecplot,分块输出
+CW----11：统计ECOM，输出监控断面的三维tecplot,不加原始底图
+CW----12：统计ECOM，输出监控断面的三维tecplot，加原始底图
+CW----13：统计ECOM，输出监控断面的二维tecplot，并统计断面流量
+CW----14：统计ECOM，输出监控断面的二维tecplot，并将多个分块结果输出到一个dat中
+
+
+
+
+CW**************************************************
+CW-------------IMYREQ---RCA统计系列--------------
+CW**************************************************  
+CW----20：统计RCA，输出监控断面的二维tecplot,分块输出
+CW----21：统计RCA，输出监控断面的三维tecplot,不加原始底图
+CW----22：统计RCA，输出监控断面的三维tecplot，加原始底图
+CW----23：统计ECOM，输出监控断面的二维tecplot，并将多个分块结果输出到一个dat中
+ 
+
+
+      IF(IMYREQ.EQ.0)THEN
+      ISECOM=3  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
+      ISMONITJ=0  ! 整体的大范围上，是否有监控统计 1，有监控点的统计；0无监控点
+      ISSUBALL=1   !!!是否输出每个SUB每年的结果     
+      ISSUB=1
+      ISSUBAMON=1
+     
+      ELSE IF(IMYREQ.EQ.1)THEN
+      ISECOM=3  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
+      ISSUBALL=1   !!!是否输出每个SUB每年的结果     
+      ISSUB=1   
+      ISSUBAYEA=1   
+          
+      ELSE IF(IMYREQ.EQ.2)THEN
+        ISECOM=3   
+        ISHRUALL=1    
+        ISHRU=1
+          
+          
+       ELSE IF(IMYREQ.EQ.3)THEN
+        ISECOM=3   
+        ISHRUCITY=1   
+        ISHRU=1
+        
+       END IF
+       
+       
+       
+      IF(IMYREQ.EQ.10)THEN
+        ISECOM=1  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
+        ISMONITJ=1  ! 整体的大范围上，是否有监控统计 1，有监控点的统计；0无监控点
+    
+      ELSE IF(IMYREQ.EQ.11)THEN 
+          ISECOM=1   
+          ISMONITJ=1
+          ISRCA3D=1
+       
+      ELSE IF(IMYREQ.EQ.12)THEN 
+          ISECOM=1   
+          ISMONITJ=1
+          ISRCA3D=1    
+          ISDITU=1
+          
+      ELSE IF(IMYREQ.EQ.13)THEN 
+          ISECOM=1   
+          ISMONITJ=1
+          ISQCHECK=1
+          
+      ELSE IF(IMYREQ.EQ.14)THEN 
+          ISECOM=1   
+          ISMONITJ=1
+          ISTOALL=1
+       
+      
+       END IF
+       
+       
+      IF(IMYREQ.EQ.20)THEN
+        ISECOM=2  !!1进行ecom的统计；2进行rca结果的统计; 3进行swat统计；4进行漂浮物统计；
+        ISMONITJ=1  ! 整体的大范围上，是否有监控统计 1，有监控点的统计；0无监控点
+    
+      ELSE IF(IMYREQ.EQ.21)THEN 
+          ISECOM=2   
+          ISMONITJ=1
+          ISRCA3D=1
+          
+       ELSE IF(IMYREQ.EQ.22)THEN 
+          ISECOM=2   
+          ISMONITJ=1
+          ISRCA3D=1    
+          ISDITU=1
+          
+        ELSE IF(IMYREQ.EQ.14)THEN 
+          ISECOM=2   
+          ISMONITJ=1
+          ISTOALL=1
+      END IF  
+      
+      
+      
+CW==============================================================
+CW**************************************************************
+
+
       CALL INIFNAME
       
       
@@ -139,7 +259,7 @@ C
         OPEN (14,FILE=FNAME(2),ACTION='READ')     !!!SWAT统计
       END IF
       
-         IF(ISQCHECK.EQ.1)THEN   !!!进行断面的流量统计
+       IF(ISQCHECK.EQ.1)THEN   !!!进行断面的流量统计
               
             FNAMMONI(2)=trim(FNAME(9))//"_QCHECK.DAT"
             
@@ -160,7 +280,10 @@ C
      &V(IJ,k),
      &W(IJ,K),K=1,KB-1),EL(IJ)  "
 202       Format(A50)         
-          END IF    
+       END IF    
+       
+       
+CW---------读取断面统计的要求----------------       
       
        read(14,*) numtime1,numtime2,MASTART,MAEND
         
@@ -184,9 +307,7 @@ C
            ELSE
             write(CMA,'(I10.4)')IMONI(i)          
            END IF
-
-
-
+ 
          IF(ISECOM.EQ.1)THEN    !!!ECOM中的统计
              
           
@@ -198,12 +319,7 @@ C
      &U1,V1,
      &W1,T1,Q21,
      &L1 "
-          
-          
-             
-          
-          
-          
+           
           ELSE IF(ISECOM.EQ.2)THEN 
 
          
@@ -264,61 +380,10 @@ C
           END IF
           end do
        
-       end do
+         end do
         close(14)
         
-        
-         IF(ISHRUALL.EQ.1)THEN   !!!每个hru每年的结果值
-           FNAMMONI(1)=trim(FNAME(5))//"_HRU_ALL.DAT"
-           WRITE(*,*)"输出：",trim(FNAME(5))//"_HRU_ALL.DAT" 
-           
-           OPEN(220,FILE=FNAMMONI(1))
-           WRITE(220,6000)"hruID,IY,
-     &AREA,PCP,SURQ,ET,TLOSS,TLATQ,GWQ,WYLD,TN_Q,TP_Q
-     &,COD,NH4,SS,TN_ARE,TP_ARE"     
-         END IF  
-         
-     
-        IF(ISSUBALL.EQ.1)THEN   
-            
-CW==============每个SUB每年的结果值================
-           FNAMMONI(1)=trim(FNAME(5))//"_SUB_ALL.DAT"
-           WRITE(*,*)"输出：",trim(FNAME(5))//"_SUB_ALL.DAT" 
-           
-           OPEN(220,FILE=FNAMMONI(1))
-           WRITE(220,6000)"SUBID,IY,
-     &AREA,PCP,SURQ,TN_Q,TP_Q,ET,
-     &,COD,NH4,SS,TN_ARE,TP_ARE"     
-           
-           
-           
-CW===============逐月统计============
-         DO IM=1,12
-           write(CMA,'(I2.2)')IM
-             
-           FNAMMONI(IM)=trim(FNAME(5))//"_SUB_ALL_"//trim(CMA)//".DAT"
-          
-           OPEN(220+IM,FILE=FNAMMONI(IM))
-           WRITE(220+IM,6000)"SUBID,IY,
-     &AREA,PCP,SURQ,TN_Q,TP_Q,ET,
-     &,COD,NH4,SS,TN_ARE,TP_ARE"         
-          
-         END DO
-           
-           
-       END IF           
-         
-         
-      IF(ISRCHALL.EQ.1)THEN   !!!每个RCH每年的结果值
-           FNAMMONI(1)=trim(FNAME(5))//"_RCH_ALL.DAT"
-           WRITE(*,*)"输出：",trim(FNAME(5))//"_RCH_ALL.DAT" 
-           
-           OPEN(220,FILE=FNAMMONI(1))
-           WRITE(220,6000)"RCHID,IY,IM,ID,
-     &AREA,PCP,COD_C,COD_Q,NH4_C,NH4_Q,
-     &TN_C,TN_Q,TP_C,TP_Q,TEMP"     
-       END IF                    
-        
+              
       IF(NUMHRU.GT.0)THEN
     
             FNAMMONI(1)=trim(FNAME(5))//"_AVER_HRU"//".DAT"
@@ -392,20 +457,77 @@ CW===============三维输出显示======================
            
             call readoutput(ISECOM)         !!!读取swat的output结果    
        END IF  
+       
+       
          
-       
-   
+        IF(ISSUBALL.EQ.1)THEN      !!!统计每个sub的值,逐年统计
+            
+            
         
-        
-        
+        IF(ISSUBAYEA.EQ.1)THEN
+            
+CW==============每个SUB每年的结果值================
+           FNAMMONI(1)=trim(FNAME(5))//"_SUB_ALL.DAT"
+           WRITE(*,*)"输出：",trim(FNAME(5))//"_SUB_ALL.DAT" 
+           
+           OPEN(220,FILE=FNAMMONI(1))
+           WRITE(220,6000)"SUBID,IY,
+     &AREA,PCP,SURQ,TN_Q,TP_Q,ET,
+     &,COD,NH4,SS,TN_ARE,TP_ARE"   
+           
+           call readoutput(ISECOM)         !!!读取swat的output结果     
+           
+         END IF  
+           
+CW===============逐月统计============
+        IF(ISSUBAMON.EQ.1)THEN
+
+         DO IM=1,12
+           write(CMA,'(I2.2)')IM
+             
+           FNAMMONI(IM)=trim(FNAME(5))//"_SUB_ALL_"//trim(CMA)//".DAT"
           
+           OPEN(220+IM,FILE=FNAMMONI(IM))
+           WRITE(220+IM,6000)"SUBID,YERA,MONS,
+     &AREA,PCP,SURQ,ET,TN,TP,COD
+     &,NH4,SS,TN_ARE,TP_ARE"         
+         END DO
+           
+           call readoutput(ISECOM)         !!!读取swat的output结果     
+           
+         END IF
+       END IF           
+         
+         
+      IF(ISRCHALL.EQ.1)THEN   !!!每个RCH每年的结果值
+           FNAMMONI(1)=trim(FNAME(5))//"_RCH_ALL.DAT"
+           WRITE(*,*)"输出：",trim(FNAME(5))//"_RCH_ALL.DAT" 
+           
+           OPEN(220,FILE=FNAMMONI(1))
+           WRITE(220,6000)"RCHID,IY,IM,ID,
+     &AREA,PCP,COD_C,COD_Q,NH4_C,NH4_Q,
+     &TN_C,TN_Q,TP_C,TP_Q,TEMP"     
+           
+           
+              call readoutput(ISECOM)         !!!读取swat的output结果    
+           
+           
+      END IF      
+      
+      
+      IF(ISHRUALL.EQ.1)THEN   !!!每个hru每年的结果值
+           FNAMMONI(1)=trim(FNAME(5))//"_HRU_ALL.DAT"
+           WRITE(*,*)"输出：",trim(FNAME(5))//"_HRU_ALL.DAT" 
+           
+           OPEN(220,FILE=FNAMMONI(1))
+           WRITE(220,6000)"hruID,IY,
+     &AREA,PCP,SURQ,ET,TLOSS,TLATQ,GWQ,WYLD,TN_Q,TP_Q
+     &,COD,NH4,SS,TN_ARE,TP_ARE"     
+      END IF  
+    
       END IF
-      
-      
-      
-      
-      
        
+      
        WRITE(*,*)"生成完成……"
         
 5000   format(a50)

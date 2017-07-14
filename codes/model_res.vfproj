@@ -83,7 +83,7 @@
 		<File RelativePath=".\FOR\INC\ZM.INC"/></Filter>
 		<File RelativePath=".\FOR\initfname.f"/>
 		<File RelativePath=".\FOR\main.f"/>
-		<File RelativePath=".\FOR\readoutput.f"/>
+		<File RelativePath=".\FOR\readoutput_swat.f"/>
 		<File RelativePath=".\FOR\readtecplot_debug.f"/>
 		<File RelativePath=".\FOR\readtecplot_ECOM_3D.f"/>
 		<File RelativePath=".\FOR\readtecplot_RCA_3D.f"/></Files>

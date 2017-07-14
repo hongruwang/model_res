@@ -1,7 +1,3 @@
 
-      COMMON/PRO1/ ZDIST(IJM,KB),SHEAR(IJM,KB)
-      COMMON/PRO2/ RI(IJM,KB),buoy(IJM,KB),STAB(IJM,KB)
-      COMMON/PRO3/ PRIT(IJM),Khomo(IJM,KB),SKHOMO(IJM,KB)
-	  
-	  
+ 
 	  REAL Khomo

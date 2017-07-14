@@ -150,7 +150,7 @@ DEP_F90_MAIN_=\
 # End Source File
 # Begin Source File
 
-SOURCE=.\readoutput.f
+SOURCE=.\readoutput_swat.f
 DEP_F90_READO=\
 	".\INC\ARCHIVE.INC"\
 	".\INC\comdeck.INC"\
@@ -166,6 +166,34 @@ DEP_F90_READO=\
 
 SOURCE=.\readtecplot_debug.f
 DEP_F90_READT=\
+	".\INC\ARCHIVE.INC"\
+	".\INC\comdeck.INC"\
+	".\INC\ECOM3D.INC"\
+	".\INC\ICNT.INC"\
+	".\INC\INDEX.INC"\
+	".\INC\PARA.INC"\
+	".\INC\TRANSPORT.INC"\
+	".\INC\WVULP.INC"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\readtecplot_ECOM_3D.f
+DEP_F90_READTE=\
+	".\INC\ARCHIVE.INC"\
+	".\INC\comdeck.INC"\
+	".\INC\ECOM3D.INC"\
+	".\INC\ICNT.INC"\
+	".\INC\INDEX.INC"\
+	".\INC\PARA.INC"\
+	".\INC\TRANSPORT.INC"\
+	".\INC\WVULP.INC"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\readtecplot_RCA_3D.f
+DEP_F90_READTEC=\
 	".\INC\ARCHIVE.INC"\
 	".\INC\comdeck.INC"\
 	".\INC\ECOM3D.INC"\
